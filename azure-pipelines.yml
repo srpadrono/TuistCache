@@ -15,6 +15,8 @@ pool:
 jobs:
 - job: BuildAndUpload
   steps:
+  - bash: curl -Ls https://install.tuist.io | bash
+    displayName: Install Tuist
   - task: Xcode@5
     inputs:
       actions: 'build'
