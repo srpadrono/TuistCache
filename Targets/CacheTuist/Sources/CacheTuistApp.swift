@@ -1,5 +1,4 @@
 import SwiftUI
-import CacheTuistUI
 
 @main
 struct CacheTuistApp: App {
