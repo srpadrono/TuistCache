@@ -17,6 +17,8 @@ jobs:
   steps:
   - bash: curl -Ls https://install.tuist.io | bash
     displayName: Install Tuist
+  - bash: tuist generate
+    displayName: Generate Workspace
   - task: Xcode@5
     inputs:
       actions: 'build'
