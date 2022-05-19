@@ -23,3 +23,5 @@ jobs:
     displayName: Generate Workspace
   - bash: tuist build CacheTuist
     displayName: Build
+  - bash: tuist test
+    displayName: Test
