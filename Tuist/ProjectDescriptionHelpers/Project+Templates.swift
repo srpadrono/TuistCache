@@ -70,6 +70,18 @@ extension Project {
             dependencies: [
                 .target(name: "\(name)")
         ])
-        return [mainTarget, testTarget]
+        
+        let spmTestTarget = Target(
+            name: "\(name)SPMTests",
+            platform: platform,
+            product: .unitTests,
+            bundleId: "io.tuist.\(name)Tests",
+            infoPlist: .default,
+            sources: ["Modules/**/Tests/**"],
+            dependencies: [
+                .target(name: "\(name)")
+        ])
+        
+        return [mainTarget, testTarget, spmTestTarget]
     }
 }
