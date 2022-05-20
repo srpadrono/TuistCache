@@ -3,4 +3,8 @@ public struct ModuleA {
 
     public init() {
     }
+    
+    var value: Int {
+        0
+    }
 }
