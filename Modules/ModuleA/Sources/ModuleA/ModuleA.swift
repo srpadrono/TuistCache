@@ -1,10 +1,6 @@
 public struct ModuleA {
-    public private(set) var text = "Hello, World!"
+    public private(set) var text = "Hello, World!1"
 
-    public init() {
-    }
+    public init() { }
     
-    var value: Int {
-        0
-    }
 }

@@ -57,7 +57,8 @@ extension Project {
             infoPlist: .extendingDefault(with: infoPlist),
             sources: ["Targets/\(name)/Sources/**"],
             resources: ["Targets/\(name)/Resources/**"],
-            dependencies: [.external(name: "ModuleA"), .external(name: "ModuleB")]
+            dependencies: [.external(name: "ModuleA"),
+                           .external(name: "ModuleB")]
         )
 
         let testTarget = Target(
@@ -71,17 +72,6 @@ extension Project {
                 .target(name: "\(name)")
         ])
         
-        let spmTestTarget = Target(
-            name: "\(name)SPMTests",
-            platform: platform,
-            product: .unitTests,
-            bundleId: "io.tuist.\(name)Tests",
-            infoPlist: .default,
-            sources: ["Modules/**/Tests/**"],
-            dependencies: [
-                .target(name: "\(name)")
-        ])
-        
-        return [mainTarget, testTarget, spmTestTarget]
+        return [mainTarget, testTarget]
     }
 }
