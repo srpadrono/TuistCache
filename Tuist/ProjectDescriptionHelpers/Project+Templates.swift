@@ -75,3 +75,63 @@ extension Project {
         return [mainTarget, testTarget]
     }
 }
+
+extension Project {
+
+    public static func testApp(name: String, platform: Platform) -> Project {
+        let targets = makeAppTestTargets(name: name,
+                                     platform: platform)
+        return Project(name: "\(name)App",
+                       organizationName: "tuist.io",
+                       targets: targets)
+    }
+    
+    private static func makeAppTestTargets(name: String, platform: Platform) -> [Target] {
+        
+        let appName = "\(name)App"
+        
+        let platform: Platform = platform
+        let infoPlist: [String: InfoPlist.Value] = [
+            "CFBundleShortVersionString": "1.0",
+            "CFBundleVersion": "1",
+            "UIMainStoryboardFile": "",
+            "UILaunchStoryboardName": "LaunchScreen"
+            ]
+
+        let mainTarget = Target(
+            name: appName,
+            platform: platform,
+            product: .app,
+            bundleId: "io.tuist.\(appName)",
+            infoPlist: .extendingDefault(with: infoPlist),
+            sources: ["Targets/\(appName)/Sources/**"],
+            resources: ["Targets/\(appName)/Resources/**"],
+            dependencies: [.external(name: name)]
+        )
+
+        let unitTestTarget = Target(
+            name: "\(name)Tests",
+            platform: platform,
+            product: .unitTests,
+            bundleId: "io.tuist.\(name)Tests",
+            infoPlist: .default,
+            sources: ["../\(name)/Tests/**"],
+            dependencies: [
+                .external(name: "\(name)")
+        ])
+        
+        let uiTestTarget = Target(
+            name: "\(appName)Tests",
+            platform: platform,
+            product: .uiTests,
+            bundleId: "io.tuist.\(appName)Tests",
+            infoPlist: .default,
+            sources: ["Targets/\(appName)/Tests/**"],
+            dependencies: [
+                .target(name: "\(appName)")
+        ])
+        
+        return [mainTarget, unitTestTarget, uiTestTarget]
+    }
+}
+
