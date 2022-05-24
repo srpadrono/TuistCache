@@ -25,3 +25,17 @@ jobs:
     displayName: Generate Workspace
   - bash: tuist test TuistCache-Workspace
     displayName: Test
+  - task: ArtifactoryGenericUpload@2
+    inputs:
+      artifactoryService: 'arti'
+      specSource: 'taskConfiguration'
+      fileSpec: |
+        {
+          "files": [
+            {
+              "pattern": "*.yaml",
+              "target": "default-generic-local/upload/"
+            }
+          ]
+        }
+      failNoOp: true
