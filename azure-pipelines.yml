@@ -37,10 +37,11 @@ jobs:
           ]
         }
       failNoOp: true
-  - script: |
-      echo "Structure of work folder of this pipeline:"
-      tree $(Agent.WorkFolder)\1 /f
-    displayName: Folder Content
+  - task: CmdLine@2
+    displayName: 'List files'
+    inputs:
+      script: |
+        for %%f in ( "$(Build.ArtifactStagingDirectory)\*" ) do @echo %%f
   - bash: tuist test TuistCache-Workspace
     displayName: Test
   - task: ArtifactoryGenericUpload@2
