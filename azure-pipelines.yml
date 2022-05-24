@@ -31,13 +31,12 @@ jobs:
         {
           "files": [
             {
-              "pattern": "default-generic-local/testcache/*",
+              "pattern": "default-generic-local/upload/*",
               "target": "/Users/runner/.tuist/Cache/BuildCache/"
             }
           ]
         }
       failNoOp: true
-      syncDeletesPath: '/Users/runner/.tuist/Cache/TestCache/'
   - powershell: |
       Write-Host "Show all folder content"
       Get-ChildItem -Path ~/.tuist/Cache\*.* -Recurse -Force
