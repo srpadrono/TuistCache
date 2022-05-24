@@ -33,8 +33,8 @@ jobs:
         {
           "files": [
             {
-              "pattern": "*.yml",
-              "target": "default-generic-local/upload/"
+              "pattern": "~/.tuist/Cache/TestsCache/*",
+              "target": "default-generic-local/testcache/"
             }
           ]
         }
