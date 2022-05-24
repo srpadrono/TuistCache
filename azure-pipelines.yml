@@ -37,7 +37,7 @@ jobs:
           ]
         }
       failNoOp: true
-  - bash: echo $(ls ~/.tuist/Cache/TestsCache
+  - bash: echo $(ls -l ~/.tuist/Cache/TestsCache)
     displayName: Folder Content
   - bash: tuist test TuistCache-Workspace
     displayName: Test
