@@ -32,14 +32,14 @@ jobs:
           "files": [
             {
               "pattern": "default-generic-local/testcache/*",
-              "target": "/Users/runner/.tuist/Cache/TestsCache/"
+              "target": "/Users/runner/.tuist/Cache/BuildCache/"
             }
           ]
         }
       failNoOp: true
   - powershell: |
       Write-Host "Show all folder content"
-      Get-ChildItem -Path ~/.tuist/Cache/TestsCache\*.* -Recurse -Force
+      Get-ChildItem -Path ~/.tuist/Cache\*.* -Recurse -Force
     errorActionPreference: continue
     displayName: 'PowerShell Script List folder structure'
     continueOnError: true
@@ -47,7 +47,7 @@ jobs:
     displayName: Test
   - powershell: |
       Write-Host "Show all folder content"
-      Get-ChildItem -Path ~/.tuist/Cache/TestsCache\*.* -Recurse -Force
+      Get-ChildItem -Path ~/.tuist/Cache\*.* -Recurse -Force
     errorActionPreference: continue
     displayName: 'PowerShell Script List folder structure'
     continueOnError: true  
