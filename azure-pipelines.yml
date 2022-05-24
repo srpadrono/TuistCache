@@ -37,6 +37,8 @@ jobs:
           ]
         }
       failNoOp: true
+  - bash: echo $(ls ~/.tuist/Cache/TestsCache
+    displayName: Folder Content
   - bash: tuist test TuistCache-Workspace
     displayName: Test
   - task: ArtifactoryGenericUpload@2
