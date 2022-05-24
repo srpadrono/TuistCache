@@ -32,7 +32,7 @@ jobs:
           "files": [
             {
               "pattern": "default-generic-local/testcache/*",
-              "target": "~/.tuist/Cache/TestsCache/"
+              "target": "/Users/runner/.tuist/Cache/TestsCache/"
             }
           ]
         }
