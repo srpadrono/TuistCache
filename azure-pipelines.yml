@@ -37,6 +37,7 @@ jobs:
           ]
         }
       failNoOp: true
+      syncDeletesPath: '/Users/runner/.tuist/Cache/TestCache/'
   - powershell: |
       Write-Host "Show all folder content"
       Get-ChildItem -Path ~/.tuist/Cache\*.* -Recurse -Force
