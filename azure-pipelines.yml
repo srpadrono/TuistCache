@@ -37,20 +37,8 @@ jobs:
           ]
         }
       failNoOp: false
-  - powershell: |
-      Write-Host "Show all folder content"
-      Get-ChildItem -Path ~/.tuist/Cache\*.* -Recurse -Force
-    errorActionPreference: continue
-    displayName: 'PowerShell Script List folder structure'
-    continueOnError: true
   - bash: tuist test TuistCache-Workspace
-    displayName: Test
-  - powershell: |
-      Write-Host "Show all folder content"
-      Get-ChildItem -Path ~/.tuist/Cache\*.* -Recurse -Force
-    errorActionPreference: continue
-    displayName: 'PowerShell Script List folder structure'
-    continueOnError: true  
+    displayName: Test  
   - task: ArtifactoryGenericUpload@2
     inputs:
       artifactoryService: 'arti'
