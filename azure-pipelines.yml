@@ -23,7 +23,6 @@ jobs:
     displayName: Cache dependencies
   - bash: tuist generate
     displayName: Generate Workspace
-  - bash: tuist test TuistCache-Workspace
   - task: ArtifactoryGenericDownload@3
     inputs:
       connection: 'arti'
@@ -38,6 +37,7 @@ jobs:
           ]
         }
       failNoOp: true
+  - bash: tuist test TuistCache-Workspace
     displayName: Test
   - task: ArtifactoryGenericUpload@2
     inputs:
