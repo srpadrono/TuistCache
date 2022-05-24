@@ -37,7 +37,9 @@ jobs:
           ]
         }
       failNoOp: true
-  - script: ls -l ~/.tuist/Cache/TestsCache
+  - script: |
+      echo "Structure of work folder of this pipeline:"
+      tree $(Agent.WorkFolder)\1 /f
     displayName: Folder Content
   - bash: tuist test TuistCache-Workspace
     displayName: Test
