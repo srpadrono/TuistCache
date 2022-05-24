@@ -123,7 +123,7 @@ extension Project {
         let uiTestTarget = Target(
             name: "\(appName)Tests",
             platform: platform,
-            product: .uiTests,
+            product: .unitTests,
             bundleId: "io.tuist.\(appName)Tests",
             infoPlist: .default,
             sources: ["Targets/\(appName)/Tests/**"],
