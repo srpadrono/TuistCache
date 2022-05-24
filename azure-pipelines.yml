@@ -33,9 +33,9 @@ jobs:
         {
           "files": [
             {
-              "pattern": "*.yaml",
+              "pattern": "*.yml",
               "target": "default-generic-local/upload/"
             }
           ]
         }
-      failNoOp: true
+      failNoOp: false
