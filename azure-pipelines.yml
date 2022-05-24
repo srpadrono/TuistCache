@@ -31,8 +31,8 @@ jobs:
         {
           "files": [
             {
-              "pattern": "default-generic-local/upload/*",
-              "target": "/Users/runner/.tuist/Cache/BuildCache/"
+              "pattern": "default-generic-local/TestsCache/*",
+              "target": "/Users/runner/.tuist/Cache/"
             }
           ]
         }
@@ -60,7 +60,7 @@ jobs:
           "files": [
             {
               "pattern": "~/.tuist/Cache/TestsCache/*",
-              "target": "default-generic-local/testcache/"
+              "target": "default-generic-local/TestsCache/"
             }
           ]
         }
