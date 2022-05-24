@@ -36,7 +36,7 @@ jobs:
             }
           ]
         }
-      failNoOp: true
+      failNoOp: false
   - powershell: |
       Write-Host "Show all folder content"
       Get-ChildItem -Path ~/.tuist/Cache\*.* -Recurse -Force
