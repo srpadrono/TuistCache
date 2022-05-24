@@ -24,6 +24,20 @@ jobs:
   - bash: tuist generate
     displayName: Generate Workspace
   - bash: tuist test TuistCache-Workspace
+  - task: ArtifactoryGenericDownload@3
+    inputs:
+      connection: 'arti'
+      specSource: 'taskConfiguration'
+      fileSpec: |
+        {
+          "files": [
+            {
+              "pattern": "default-generic-local/testcache/*",
+              "target": "~/.tuist/Cache/TestsCache/"
+            }
+          ]
+        }
+      failNoOp: true
     displayName: Test
   - task: ArtifactoryGenericUpload@2
     inputs:
