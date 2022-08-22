@@ -1,11 +1,17 @@
 import SwiftUI
+import ModuleB
+import ModuleA
 
 public struct ContentView: View {
+    let moduleA = ModuleA()
+    let moduleB = ModuleB()
+    
+    
     public init() {}
 
     public var body: some View {
-        Text("Hello, World!")
-            .padding()
+        Text("\(moduleA.text) - \(moduleA.version)").padding()
+        Text("\(moduleB.text) - \(moduleB.version)").padding()
     }
 }
 

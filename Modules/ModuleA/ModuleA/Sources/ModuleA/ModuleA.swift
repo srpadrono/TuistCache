@@ -3,7 +3,8 @@ import RxCocoa
 import RxSwift
 
 public struct ModuleA {
-    public private(set) var text = "Hello, World!"
+    public private(set) var text = "Module A"
+    public private(set) var version = "V1"
 
     public init() { }
     

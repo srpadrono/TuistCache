@@ -3,6 +3,6 @@ import XCTest
 
 final class ModuleBTests: XCTestCase {
     func testExample() throws {
-        XCTAssertEqual(ModuleB().text, "Hello, World!")
+        XCTAssertEqual(ModuleB().text, "Module B")
     }
 }
