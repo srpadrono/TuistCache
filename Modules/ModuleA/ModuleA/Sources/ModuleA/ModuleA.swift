@@ -4,7 +4,7 @@ import RxSwift
 
 public struct ModuleA {
     public private(set) var text = "Module A"
-    public private(set) var version = "V1"
+    public private(set) var version = "V2"
 
     public init() { }
     
