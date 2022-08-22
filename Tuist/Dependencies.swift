@@ -10,7 +10,8 @@ import ProjectDescription
 let dependencies = Dependencies(
     swiftPackageManager: [
         .local(path: "Modules/ModuleA/ModuleA"),
-        .local(path: "Modules/ModuleB/ModuleB")
+        .local(path: "Modules/ModuleB/ModuleB"),
+        .local(path: "Modules/ModuleC/ModuleC")
     ],
     platforms: [.iOS]
 )

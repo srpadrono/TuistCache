@@ -58,7 +58,8 @@ extension Project {
             sources: ["Targets/\(name)/Sources/**"],
             resources: ["Targets/\(name)/Resources/**"],
             dependencies: [.external(name: "ModuleA"),
-                           .external(name: "ModuleB")]
+                           .external(name: "ModuleB"),
+                           .external(name: "ModuleC")]
         )
 
         let testTarget = Target(
