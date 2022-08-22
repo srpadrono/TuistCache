@@ -19,8 +19,8 @@ jobs:
     displayName: Install Tuist
   - bash: tuist fetch
     displayName: Fetch SPM
-  # - bash: tuist cache warm
-  #   displayName: Cache dependencies
+  - bash: tuist cache warm
+    displayName: Cache dependencies
   - bash: tuist generate
     displayName: Generate Workspace
   - bash: tuist test
