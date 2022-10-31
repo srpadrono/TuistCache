@@ -12,6 +12,9 @@ pr:
 pool:
   vmImage: 'macos-latest'
 
+variables:
+  test_cache: "~/.tuist/Cache/TestsCache/"
+
 jobs:
 - job: BuildAndUpload
   steps:
@@ -23,5 +26,9 @@ jobs:
     displayName: Cache dependencies
   - bash: tuist generate
     displayName: Generate Workspace
+  - task: Cache@2
+    inputs:
+      key: 'spm | "$(Agent.OS)" | Workspace.swift'
+      path: $(test_cache)
   - bash: tuist test TuistCache-Workspace
     displayName: Test  
