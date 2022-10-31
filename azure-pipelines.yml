@@ -24,7 +24,7 @@ jobs:
     displayName: Fetch SPM
   - task: Cache@2
     inputs:
-      key: 'spm | "$(Agent.OS)" | Workspace.swift'
+      key: 'spm | "$(Agent.OS)" | Build.BuildId'
       path: $(test_cache)
   - bash: tuist test TuistCache-Workspace
     displayName: Test  
