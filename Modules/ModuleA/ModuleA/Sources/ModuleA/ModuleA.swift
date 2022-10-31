@@ -1,6 +1,8 @@
 public struct ModuleA {
     public private(set) var text = "Hello, World!"
 
-    public init() { }
+    public init() { 
+        let test = "Hello, World!"
+    }
     
 }
