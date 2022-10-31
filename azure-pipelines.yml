@@ -13,7 +13,7 @@ pool:
   vmImage: 'macos-latest'
 
 variables:
-  test_cache: $(Build.SourcesDirectory)/.tuist/Cache/TestsCache/
+  test_cache: $(Agent.BuildDirectory)/.tuist/Cache/TestsCache/
 
 jobs:
 - job: BuildAndUpload
