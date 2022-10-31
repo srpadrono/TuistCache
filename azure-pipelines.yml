@@ -24,9 +24,10 @@ jobs:
     displayName: Fetch SPM
   - task: Cache@2
     inputs:
-      key: 'spm | "$(Agent.OS)" | "$(Build.BuildId)"'
+      key: 'spm | "$(Agent.OS)" | "$(Build.SourceBranch)" | "$(Build.BuildId)"'
       restoreKeys: |
         spm | "$(Agent.OS)"
+        "$(Build.SourceBranch)"
       path: $(test_cache)
   - bash: tuist test TuistCache-Workspace
     displayName: Test  
