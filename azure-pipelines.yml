@@ -26,8 +26,8 @@ jobs:
     inputs:
       key: 'spm | "$(Agent.OS)" | "$(Build.SourceBranch)" | "$(Build.BuildId)"'
       restoreKeys: |
-        spm | "$(Agent.OS)"
-        "$(Build.SourceBranch)"
+        spm | "$(Agent.OS)" | "$(Build.SourceBranch)"
+        spm | "$(Agent.OS)" | refs/heads/main
       path: $(test_cache)
   - bash: tuist test TuistCache-Workspace
     displayName: Test  
