@@ -23,3 +23,5 @@ jobs:
     displayName: Cache dependencies
   - bash: tuist generate
     displayName: Generate Workspace
+  - bash: tuist test TuistCache-Workspace
+    displayName: Test  
