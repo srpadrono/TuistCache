@@ -22,10 +22,6 @@ jobs:
     displayName: Install Tuist
   - bash: tuist fetch
     displayName: Fetch SPM
-  - bash: tuist cache warm
-    displayName: Cache dependencies
-  - bash: tuist generate
-    displayName: Generate Workspace
   - task: Cache@2
     inputs:
       key: 'spm | "$(Agent.OS)" | Workspace.swift'
