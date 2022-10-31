@@ -25,6 +25,8 @@ jobs:
   - task: Cache@2
     inputs:
       key: 'spm | "$(Agent.OS)" | "$(Build.BuildId)"'
+      restoreKeys: |
+        spm | "$(Agent.OS)"
       path: $(test_cache)
   - bash: tuist test TuistCache-Workspace
     displayName: Test  
